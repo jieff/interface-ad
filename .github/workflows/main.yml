@@ -1,4 +1,4 @@
-name: Build Docker Image
+name: Build and Push Docker Image
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       - name: Build Docker image
         run: |
           COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          docker build -t jieffcavalcanti/front-dev:$COMMIT_SHA .
+          docker build -t $DOCKER_USERNAME/front-dev:$COMMIT_SHA .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -36,4 +36,4 @@ jobs:
       - name: Push Docker image
         run: |
           COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          docker push jieffcavalcanti/front-dev:$COMMIT_SHA
+          docker push $DOCKER_USERNAME/front-dev:$COMMIT_SHA
