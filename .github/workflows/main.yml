@@ -25,7 +25,7 @@ jobs:
       - name: Build Docker image
         run: |
           COMMIT_SHA=$(git rev-parse --short=7 HEAD)
-          docker build -t $DOCKER_USERNAME/front-dev:$COMMIT_SHA .
+          docker build -t $DOCKER_USERNAME/frontdev:$COMMIT_SHA .
 
 
       - name: Log in to Docker Hub
