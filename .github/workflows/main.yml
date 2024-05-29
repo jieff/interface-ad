@@ -36,4 +36,4 @@ jobs:
       - name: Push Docker image
         run: |
           COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          docker push jieffcavalcanti/nest:$COMMIT_SHA
+          docker push jieffcavalcanti/front-dev:$COMMIT_SHA
