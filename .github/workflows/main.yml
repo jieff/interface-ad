@@ -24,7 +24,8 @@ jobs:
       - name: Build Docker image
         run: |
           COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          docker build -t jieffcavalcanti/frontdev:$COMMIT_SHA .
+          docker build -t jieffcavalcanti/frontdev:$COMMIT_SHA -f Dockerfile .
+
 
 
       - name: Log in to Docker Hub
