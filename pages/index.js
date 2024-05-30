@@ -15,7 +15,7 @@
 
 */
 /*eslint-disable*/
-// test CI Build Bezalel
+// test CI Build Bezalel 1.0
 import React from "react";
 import Link from "next/link";
 
