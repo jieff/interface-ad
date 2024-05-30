@@ -53,12 +53,11 @@ function Login() {
         },
         body: JSON.stringify(formData),
       });
-
+      console.log(response);
 
       if (response.ok) {
         const data = await response.json();
         handleSaveAuthenticationDataLoggedInUser(data);
-        // console.log('Data from API:', data); // Adicione esta linha
 
         let redirectUrl = 'https://skillfy.com.br';
 
